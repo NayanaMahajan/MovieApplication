@@ -1,0 +1,52 @@
+﻿@model MovieApplication.Models.Customer
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer Details</h2>
+<div>
+    <table>
+        <tr>
+            <td>
+                <b> Name :</b>
+            </td>
+            <td>
+                @Model.Name
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b> Id :</b>
+            </td>
+            <td>
+                @Model.Id
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b> City :</b>
+            </td>
+            <td>
+                @Model.City
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b> Movie Name :</b>
+            </td>
+            <td>
+                @Model.MovieName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b> Gender :</b>
+            </td>
+            <td>
+                @Model.Gender
+            </td>
+        </tr>
+    </table>
+</div>
+

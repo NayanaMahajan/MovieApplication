@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MovieApplication.Models.Customer>
+
+@using MovieApplication.Models;
+
+@{
+    ViewBag.Title = "ShowCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Customers</h2>
+<table class=" table table-bordered table-hover">
+    <thead>
+       <tr>
+           <th>Customer Name</th>
+           <th>Gender</th>
+           <th></th>
+           <th></th>
+       </tr>
+    </thead>
+    <tbody>
+        @foreach (Customer customers in @Model)
+        {        
+            <tr>
+                <td>@Html.ActionLink(customers.Name, "Index", new { id = customers.Id })</td>
+                <td>@customers.Gender</td>
+                <td>@Html.ActionLink("Edit","Edit",new { id = customers.Id})</td>
+                <td>@Html.ActionLink("Delete","Delete",new { id=customers.Id})</td>
+            </tr>           
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,37 @@
+﻿@model MovieApplication.ViewModels.CustomerPaymentModeViewModel
+@{
+    ViewBag.Title = "ViewForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Customer</h2>
+
+@using (Html.BeginForm("Create", "Customer"))
+{
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.customer.Id)
+        @Html.TextBoxFor(m => m.customer.Id, new { @class = "form-control" })
+    </div>*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.customer.Name)
+        @Html.TextBoxFor(m => m.customer.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.customer.City)
+        @Html.TextBoxFor(m => m.customer.City, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.customer.MovieName)
+        @Html.TextBoxFor(m => m.customer.MovieName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p=>p.paymentMode)
+        @Html.DropDownListFor(m => m.paymentMode, new SelectList(Model.paymentMode,"Id", "PaymentType"),"Select Payment Mode",new { @class = "form-control" })
+    </div>
+    <b>Select Gender: </b><br />
+    @Html.RadioButtonFor(m => m.customer.Gender, "Male", new { @checked = "true" })<text>Male</text>
+    @Html.RadioButtonFor(m => m.customer.Gender, "Female")<text>Female</text>
+    <br />
+    @Html.HiddenFor(m => m.customer.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
